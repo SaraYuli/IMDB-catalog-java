@@ -5,6 +5,7 @@ public abstract class Pessoa {
     private int id;
 
     private String nome;
+    // Data de nascimento sendo usada no padrão ddMMYYYY
     private String dataNascimento;
     private String nacionalidade;
 
