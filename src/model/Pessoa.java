@@ -1,9 +1,13 @@
 package model;
 
+import java.util.Date;
+
 public abstract class Pessoa {
     private String nome;
-    private int dataNascimento;
+    private Date dataNascimento;
     private String nacionalidade;
+    
+    public Pessoa(){}
 
     public Pessoa(String nome, int dataNascimento, String nacionalidade) {
         this.nome = nome;
@@ -26,13 +30,15 @@ public abstract class Pessoa {
     }
     public String getNacionalidade(){
         return nacionalidade;
-    }
+
     public void setNacionalidade(String nacionalidade){
         this.nacionalidade = nacionalidade;
     }
-     public void exibirInformacoesBasicas(){
-         System.out.println("Nome: " + this.nome);
-         System.out.println("Data de Nascimento: " + this.dataNascimento);
-         System.out.println("Nacionalidade: " + this.nacionalidade);
-     }
+
+    public abstract String getDescricao();
+
+    @Override
+     public String toString(){
+        return "Nome: " + nome + "Nascimento: " + dataNascimento + "Nacionalidade: "+ nacionalidade;
+        }
 }
