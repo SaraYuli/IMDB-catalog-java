@@ -47,6 +47,6 @@ public abstract class Pessoa {
     public void exibirInformacoesBasicas() {
         System.out.println("Nome: " + this.nome);
         System.out.println("Data de Nascimento: " + this.dataNascimento);
-        System.out.println("Nacionalidade: " + this.nacionalidade);
+        System.out.println("Nacionalidade: " + this.nacionalidade + "\n");
      }
 }

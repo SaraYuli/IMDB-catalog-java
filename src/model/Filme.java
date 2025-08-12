@@ -6,7 +6,7 @@ public class Filme {
 
     private String nomeFilme;
     private String atorPrincipal;
-    private String dataLancamento;
+    private int anoLancamento;
     private String orcamento;
     private String sinopse;
 
@@ -14,10 +14,9 @@ public class Filme {
         this.id += 1;
     }
 
-    public Filme (String nomeFilme, String dataLancamento, String sinopse) {
+    public Filme (String nomeFilme, int anoLancamento) {
         this.nomeFilme = nomeFilme;
-        this.dataLancamento = dataLancamento;
-        this.sinopse = sinopse;
+        this.anoLancamento = anoLancamento;
     }
 
     public static int getId() {
@@ -40,12 +39,12 @@ public class Filme {
         this.atorPrincipal = atorPrincipal;
     }
 
-    public String getDataLancamento() {
-        return dataLancamento;
+    public int getAnoLancamento() {
+        return anoLancamento;
     }
 
-    public void setDataLancamento(String dataLancamento) {
-        this.dataLancamento = dataLancamento;
+    public void setAnoLancamento(int anoLancamento) {
+        this.anoLancamento = anoLancamento;
     }
 
     public String getOrcamento() {
