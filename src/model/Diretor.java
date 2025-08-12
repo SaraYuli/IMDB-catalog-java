@@ -2,26 +2,18 @@ package model;
 
 public class Diretor extends Pessoa {
 
-    private int numeroFilmesDirigidos;
-    private String estiloCinematografico;
+    private static int id;
+
+    private String nomeDiretor;
+    private String dataNascimento;
+    private String conjuge;
+    private String nomeFilhos;
+    private String breveDescricao;
+    private String nacionalidade;
 
     public Diretor(String nome, String dataNascimento, String nacionalidade) {
         super(nome, dataNascimento, nacionalidade);
+        this.id += 1;
     }
 
-    public int getNumeroFilmesDirigidos() {
-        return numeroFilmesDirigidos;
-    }
-
-    public void setNumeroFilmesDirigidos(int numeroFilmesDirigidos) {
-        this.numeroFilmesDirigidos = numeroFilmesDirigidos;
-    }
-
-    public String getEstiloCinematografico() {
-        return estiloCinematografico;
-    }
-
-    public void setEstiloCinematografico(String estiloCinematografico) {
-        this.estiloCinematografico = estiloCinematografico;
-    }
 }

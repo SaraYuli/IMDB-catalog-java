@@ -1,6 +1,9 @@
 package model;
 
 public abstract class Pessoa {
+
+    private int id;
+
     private String nome;
     private String dataNascimento;
     private String nacionalidade;
@@ -8,7 +11,7 @@ public abstract class Pessoa {
     public Pessoa(String nome, String dataNascimento, String nacionalidade) {
         this.nome = nome;
         this.dataNascimento = dataNascimento;
-        this.nacionalidade = nacionalidade;
+        this.id += 1;
 
     }
 
@@ -25,7 +28,12 @@ public abstract class Pessoa {
     }
 
     public void setDataNascimento(String dataNascimento) {
-        this.dataNascimento = dataNascimento;
+        if (!dataNascimento.matches("\\d{8}")) {
+            System.out.println("Por favor insira uma data válida");
+
+        } else {
+            this.dataNascimento = dataNascimento.replaceAll("\\D+", "");
+        }
     }
 
     public String getNacionalidade() {

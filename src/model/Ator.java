@@ -2,26 +2,11 @@ package model;
 
 public class Ator extends Pessoa {
 
-    private String personagemMaisFamoso;
-    private String premiacoes;
+    private int id;
 
     public Ator(String nome, String dataNascimento, String nacionalidade) {
         super(nome, dataNascimento, nacionalidade);
+        this.id += 1;
     }
 
-    public String getPersonagemMaisFamoso() {
-        return personagemMaisFamoso;
-    }
-
-    public void setPersonagemMaisFamoso(String personagemMaisFamoso) {
-        this.personagemMaisFamoso = personagemMaisFamoso;
-    }
-
-    public String getPremiacoes() {
-        return premiacoes;
-    }
-
-    public void setPremiacoes(String premiacoes) {
-        this.premiacoes = premiacoes;
-    }
 }

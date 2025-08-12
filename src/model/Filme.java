@@ -2,35 +2,42 @@ package model;
 
 public class Filme {
 
-    private Filme nomeFilme;
-    private Ator atorPrincipal;
+    private static int id;
+
+    private String nomeFilme;
+    private String atorPrincipal;
     private String dataLancamento;
     private String orcamento;
-    private String descricao;
+    private String sinopse;
 
     public Filme() {
+        this.id += 1;
     }
 
-    public Filme(Filme nomeFilme, String dataLancamento, String descricao) {
+    public Filme (String nomeFilme, String dataLancamento, String sinopse) {
         this.nomeFilme = nomeFilme;
         this.dataLancamento = dataLancamento;
-        this.descricao = descricao;
+        this.sinopse = sinopse;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public static int getId() {
+        return id;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public String getNomeFilme() {
+        return nomeFilme;
     }
 
-    public String getOrcamento() {
-        return orcamento;
+    public void setNomeFilme(String nomeFilme) {
+        this.nomeFilme = nomeFilme;
     }
 
-    public void setOrcamento(String orcamento) {
-        this.orcamento = orcamento;
+    public String getAtorPrincipal() {
+        return atorPrincipal;
+    }
+
+    public void setAtorPrincipal(String atorPrincipal) {
+        this.atorPrincipal = atorPrincipal;
     }
 
     public String getDataLancamento() {
@@ -41,4 +48,19 @@ public class Filme {
         this.dataLancamento = dataLancamento;
     }
 
+    public String getOrcamento() {
+        return orcamento;
+    }
+
+    public void setOrcamento(String orcamento) {
+        this.orcamento = orcamento;
+    }
+
+    public String getSinopse() {
+        return sinopse;
+    }
+
+    public void setSinopse(String sinopse) {
+        this.sinopse = sinopse;
+    }
 }
