@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Catalogo {
-    private final List<ItensCatalogo> itensCatalogo;
+    private final List<ItemCatalogo> itensCatalogo;
     private final Scanner scanner;
 
     public Catalogo() {
@@ -20,6 +20,7 @@ public class Catalogo {
             System.out.println("---Menu---");
             System.out.println("1. Cadastrar item: ");
             System.out.println("2. Listar itens: ");
+            System.out.println("3. Buscar itens: ");
             System.out.println("Escolha sua Opção:");
 
             opcao = scanner.nextInt();
@@ -27,10 +28,13 @@ public class Catalogo {
 
             switch (opcao) {
                 case 1:
-                    cadastrarItensCatalogo();
+                    cadastrarItemCatalogo();
                     break;
                 case 2:
                     listarItens();
+                    break;
+                case 3:
+                    buscarItem();
                     break;
                 case 0:
                     System.out.println("Saindo do programa");
@@ -42,17 +46,21 @@ public class Catalogo {
     }
 
     //--- ADD ITEM ---
-    public void cadastrarItensCatalogo() {
+    public void cadastrarItemCatalogo() {
         System.out.println("---Informe os dados do novo item---");
         System.out.println("Digite o título: ");
         String titulo = scanner.nextLine();
-        ItensCatalogo Filme = new Filme(titulo);
-        adicionarItensCatalogo(Filme);
+        String diretor = scanner.nextLine();
+        String ator = scanner.nextLine();
+        String genero = scanner.nextLine();
+        String duracao = scanner.nextLine();
+        ItemCatalogo Filme = new Filme(titulo, diretor, ator, genero, duracao);
+        adicionarItemCatalogo(Filme);
         System.out.println("Item cadastrado com sucesso!\n");
     }
 
-    public void adicionarItensCatalogo(ItensCatalogo itensCatalogo) {
-        this.itensCatalogo.add(itensCatalogo);
+    public void adicionarItemCatalogo(ItemCatalogo itemCatalogo) {
+        this.itensCatalogo.add(itemCatalogo);
     }
 
     //--- LISTAR ITEM ---
@@ -61,5 +69,27 @@ public class Catalogo {
             System.out.println("Item: " + (i+1));
             this.itensCatalogo.get(i).exibirDetalhes();
         }
+    }
+
+    //--- BUSCAR ITEM ---
+    public void buscarItem() {
+        System.out.println("---Informe o Título do item---");
+        System.out.println("Digite o título: ");
+        String titulo = scanner.nextLine();
+        ItemCatalogo itemRetornado = buscarItemPorTitulo(titulo);
+        if (itemRetornado != null){
+            itemRetornado.exibirDetalhes();
+        }
+    }
+
+    public ItemCatalogo buscarItemPorTitulo(String titulo) {
+        for (ItemCatalogo item : this.itensCatalogo) {
+            if (item.getTitulo().equalsIgnoreCase(titulo)) {
+                System.out.println("Encontrei o item: ");
+                return item;
+            }
+        }
+        System.out.println("Item não localizado");
+        return null;
     }
 }
