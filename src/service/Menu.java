@@ -131,11 +131,16 @@ public class Menu {
 
     private void listarFilmes() {
         System.out.println("Listagem de Filmes selecionada");
+        System.out.print("Buscar filme por nome (Enter para listar todos): ");
+        String busca = scanner.nextLine();
+
         for (Filme filme : catalogo.getFilmesCatalogo()) {
-            System.out.println("Nome: " + filme.getNomeFilme());
-            System.out.println("Ano: " + filme.getAnoLancamento());
-            System.out.println("Sinopse: " + filme.getSinopse());
-            System.out.println("--------------------");
+            if (busca.isEmpty() || filme.getNomeFilme().toLowerCase().matches(".*" + busca.toLowerCase() + ".*")) {
+                System.out.println("Nome: " + filme.getNomeFilme());
+                System.out.println("Ano: " + filme.getAnoLancamento());
+                System.out.println("Sinopse: " + filme.getSinopse());
+                System.out.println("--------------------");
+            }
         }
     }
 
@@ -148,8 +153,13 @@ public class Menu {
 
     private void listarAtores() {
         System.out.println("Listagem de Atores selecionada");
+        System.out.print("Buscar ator por nome (Enter para listar todos): ");
+        String busca = scanner.nextLine();
+
         for (Ator ator : catalogo.getAtoresCatalogo()) {
-            ator.exibirInfoPessoas();
+            if (busca.isEmpty() || ator.getNomePessoa().toLowerCase().matches(".*" + busca.toLowerCase() + ".*")) {
+                ator.exibirInfoPessoas();
+            }
         }
     }
 

@@ -15,8 +15,7 @@ public class Main {
         /*
         teste carregar catalogo
         Catalogo catalogo = new Catalogo();
-        catalogo.exibirInformacoesFilme(0);
-        catalogo.exibirInformacoesFilme(1);
+        catalogo.exibirInformacoesFilme(0);5
         catalogo.exibirInformacoesFilme(9);
         */
 
