@@ -64,15 +64,16 @@ public class CarregarDados {
         int n = nomesFilmes.length;
 
         //adiconar às listas
-        for ( int i = 0; i < n-1; i++) {
-            Filme f = new Filme(nomesFilmes[i], anos[i]);
+        for ( int i = 0; i < n; i++) {
+
             Ator a = new Ator(nomesAtor[i],nascimentosAtor[i],nacAtor[i]);
             Diretor d = new Diretor(nomesDiretor[i],nascimentosDir[i],nacDir[i]);
+            Filme f = new Filme(nomesFilmes[i], anos[i]);
             Avaliacao av = new Avaliacao(notas[i],f,a,d);
 
-            listFilmes.add(f);
-            listAtores.add(a);
             listDiretores.add(d);
+            listAtores.add(a);
+            listFilmes.add(f);
             listAvaliacao.add(av);
         }
     }

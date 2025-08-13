@@ -1,14 +1,16 @@
-import infra.CarregarDados;
+import service.Catalogo;
 
 public class Main {
 
 
     public static void main(String[] args) {
 
-    //Carregar dados prévios
-    CarregarDados carregarDados = new CarregarDados();
+        Catalogo catalogo = new Catalogo();
 
-        System.out.println(carregarDados.getListFilmes().get(0).getNomeFilme());
+        catalogo.exibirInformacoesFilme(0);
+        catalogo.exibirInformacoesFilme(1);
+        catalogo.exibirInformacoesFilme(9);
+
 
     }
 }

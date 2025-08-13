@@ -6,6 +6,10 @@ public class Usuario extends Pessoa{
 
     public Usuario(String nome, String dataNascimento, String  nacionalidade) {
         super(nome, dataNascimento, nacionalidade);
-        this.id += 1;
+        this.id = ++contadorId;
+    }
+
+    public int getIdPessoa() {
+        return this.id;
     }
 }

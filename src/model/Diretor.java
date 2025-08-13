@@ -1,19 +1,27 @@
 package model;
 
+import java.util.Date;
+
 public class Diretor extends Pessoa {
 
     private static int id;
 
-    private String nomeDiretor;
-    private String dataNascimento;
-    private String conjuge;
-    private String nomeFilhos;
     private String breveDescricao;
-    private String nacionalidade;
 
     public Diretor(String nome, String dataNascimento, String nacionalidade) {
         super(nome, dataNascimento, nacionalidade);
-        this.id += 1;
+        this.id = ++contadorId;
     }
 
+    public int getIdPessoa() {
+        return this.id;
+    }
+
+    public String getBreveDescricao() {
+        return breveDescricao;
+    }
+
+    public void setBreveDescricao(String breveDescricao) {
+        this.breveDescricao = breveDescricao;
+    }
 }

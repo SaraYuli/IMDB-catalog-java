@@ -2,25 +2,22 @@ package model;
 
 public class Filme {
 
-    private static int id;
+    public static int contadorId;
+    private int idFilme;
 
     private String nomeFilme;
-    private String atorPrincipal;
+    private Ator atorPrincipal;
     private int anoLancamento;
-    private String orcamento;
     private String sinopse;
-
-    public Filme() {
-        this.id += 1;
-    }
 
     public Filme (String nomeFilme, int anoLancamento) {
         this.nomeFilme = nomeFilme;
         this.anoLancamento = anoLancamento;
+        this.idFilme = ++contadorId;
     }
 
-    public static int getId() {
-        return id;
+    public int getId() {
+        return this.idFilme;
     }
 
     public String getNomeFilme() {
@@ -31,11 +28,11 @@ public class Filme {
         this.nomeFilme = nomeFilme;
     }
 
-    public String getAtorPrincipal() {
+    public Ator getAtorPrincipal() {
         return atorPrincipal;
     }
 
-    public void setAtorPrincipal(String atorPrincipal) {
+    public void setAtorPrincipal(Ator atorPrincipal) {
         this.atorPrincipal = atorPrincipal;
     }
 
@@ -45,14 +42,6 @@ public class Filme {
 
     public void setAnoLancamento(int anoLancamento) {
         this.anoLancamento = anoLancamento;
-    }
-
-    public String getOrcamento() {
-        return orcamento;
-    }
-
-    public void setOrcamento(String orcamento) {
-        this.orcamento = orcamento;
     }
 
     public String getSinopse() {
